@@ -1,0 +1,21 @@
+version: "3"
+services:
+  mirai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: miraibot
+    hostname: mirai
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    #ports:
+    #  - "80:8080"
+    volumes:
+      - ./mirai:/mirai
+      #- ./conf:/etc/sillyGirl
+    #environment:
+      # 国内网络建议开启，国外网络开启可能变慢
+      #- ENABLE_GOPROXY=true  #go 加速代理
+      #- ENABLE_GITHUBPROXY=true #github 加速代理
+      #- ENABLE_APKPROXY=true #alpin APK 加速代理
