@@ -21,7 +21,7 @@ else
 fi
 
 
-if [ ! -d $mirai_DIR/mcl ]; then
+if [ ! -f $mirai_DIR/mcl ]; then
   echo "mirai目录为空, 开始下载代码..."
   wget -P $mirai_DIR  $MCL_URL
   echo "开始解压"
