@@ -15,7 +15,7 @@ fi
 
 if ! type git  >/dev/null 2>&1; then
   echo "正在安装git..."
-  apk add git
+  apk add git vim
 else 
   echo "git已安装"
 fi
