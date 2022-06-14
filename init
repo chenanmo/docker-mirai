@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ "`ls -A ${MIRAI_DIR}`" = "" ]; then
+    echo "-------第一次启动容器，正在初始化---------"
+    unzip /tmp/mcl-${MCL_VERSION}.zip -d /mirai
+    cd /mirai
+    chmod +x mcl
+    ./mcl --update-package org.itxtech:mcl-addon
+    ./mcl --update-package org.itxtech:soyuz
+    ./mcl --update-package net.mamoe:chat-command --channel stable --type plugin
+    ./mcl --update-package net.mamoe:mirai-api-http --channel stable-v2 --type plugin
+    echo "-------初始化完成,启动miriai---------"
+    ./mcl
+else 
+  echo "-------启动miriai---------"
+  cd ${MIRAI_DIR}&&./mcl
+fi

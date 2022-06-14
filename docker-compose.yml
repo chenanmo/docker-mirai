@@ -5,11 +5,11 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: miraibot
-    hostname: mirai
+    hostname: miraibot
     restart: unless-stopped
     tty: true
     stdin_open: true
     #ports:
-      - "6700:6700"
+      #- "6700:6700"
     volumes:
       - ./mirai:/mirai
